@@ -18,6 +18,8 @@ try {
 
     $env = $input->getParameterOption(array('--env', '-e'), \Tk\Config::instance()->get('env.type', 'prod'));
 
+    $app->add(new \App\Console\Test());
+
     $app->run($input, $output);
 } catch (Exception $e) {
     echo $e->__toString();
