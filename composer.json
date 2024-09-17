@@ -1,0 +1,28 @@
+{
+  "name": "ttek/tk8cli",
+  "type": "project",
+  "description": "Tk lib basic CLI framework.",
+  "keywords": ["cli", "app", "tropotek"],
+  "time": "2024-10-01",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-0": {
+      "Tbx\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "ttek/tk-base": "^8.0.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ttek/tk-installers": true
+    }
+  }
+}

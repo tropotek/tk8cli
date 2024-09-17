@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+include(dirname(__DIR__) . '/_prepend.php');
+
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+try {
+    set_time_limit(0);
+
+    $input = new ArgvInput();
+    $output = new ConsoleOutput();
+
+    $app = \App\Factory::instance()->getConsole();
+    $env = $input->getParameterOption(array('--env', '-e'), \Tk\Config::instance()->get('env.type', 'prod'));
+
+    $app->run($input, $output);
+} catch (Exception $e) {
+    echo $e->__toString();
+}
